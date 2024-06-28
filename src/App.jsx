@@ -1,7 +1,16 @@
+import { Outlet } from "react-router-dom";
+import Footer from "./layout/Footer";
+import Header from "./layout/Header";
+
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Home Page!</h1>
+      <Header />
+      <main>
+        <Outlet />
+        <h1 className="text-3xl font-bold underline">Home Page!</h1>
+      </main>
+      <Footer />
     </>
   );
 }
