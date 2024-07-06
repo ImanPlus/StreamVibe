@@ -1,10 +1,10 @@
 import { useMediaQuery } from "react-responsive";
 
 const useBreakpoints = () => {
-  const isMobile = useMediaQuery({ query: "(max-width: 480px)" });
-  const isTablet = useMediaQuery({ query: "(max-width: 768px)" });
-  const isLaptop = useMediaQuery({ query: "(max-width: 1024px)" });
-  const isDesktop = useMediaQuery({ query: "(max-width: 1200px)" });
+  const isMobile = useMediaQuery({ minWidth: 320, maxWidth: 480 });
+  const isTablet = useMediaQuery({ minWidth: 481, maxWidth: 768 });
+  const isLaptop = useMediaQuery({ minWidth: 769, maxWidth: 1024 });
+  const isDesktop = useMediaQuery({ minWidth: 1025 });
 
   return { isMobile, isTablet, isLaptop, isDesktop };
 };
