@@ -6,9 +6,8 @@ function App() {
   return (
     <>
       <Header />
-      <main>
+      <main className="w-full bg-black08">
         <Outlet />
-        <h1 className="text-3xl font-bold underline">Home Page!</h1>
       </main>
       <Footer />
     </>
