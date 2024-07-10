@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Header />
-      <main className="w-full bg-black08">
+      <main className="w-full bg-black_08">
         <Outlet />
       </main>
       <Footer />

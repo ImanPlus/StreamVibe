@@ -9,15 +9,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        black06: "#0F0F0F",
-        black08: "#141414",
-        black10: "#1A1A1A",
-        black15: "#262626",
-        gray60: "#999999",
+        black_06: "#0F0F0F",
+        black_08: "#141414",
+        black_10: "#1A1A1A",
+        black_15: "#262626",
+        gray_60: "#999999",
+        red_45: "#E50000",
+        red_50: "#FF0000",
       },
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
         serif: ["Manrope", ...defaultTheme.fontFamily.serif],
+      },
+      height: {
+        114: "458px",
       },
     },
   },
