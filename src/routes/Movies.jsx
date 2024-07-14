@@ -16,6 +16,19 @@ export default function Movies() {
           <MovieList />
         </>
       )}
+
+      {!isMobile && (
+        <>
+          <div className="container border border-black_15 my-28 rounded-xl relative min-h-80">
+            <button className="absolute translate-x-[50%] translate-y-[-50%] bg-red_45 rounded-md p-2 font-serif font-semibold text-base text-white w-24 h-10">
+              Movies
+            </button>
+            <div className="p-10">
+              <GenreList />
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }

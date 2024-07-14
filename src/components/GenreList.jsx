@@ -1,19 +1,49 @@
 import { Pagination } from "flowbite-react";
 import GenreCard from "./GenreCard";
+import customTheme from "../theme/paginationMobile";
+import useBreakpoints from "../constants/breakpoints";
 
 export default function GenreList() {
+  const { isMobile } = useBreakpoints();
   return (
     <div className="flex flex-col justify-between py-12">
-      <h1 className="font-serif font-bold text-2xl text-white">Our Genres</h1>
+      {isMobile && (
+        <>
+          <h1 className="font-serif font-bold text-2xl text-white">
+            Our Genres
+          </h1>
 
-      <div className="overflow-x-hidden py-5">
-        <div className="flex gap-4">
-          <GenreCard />
-          <GenreCard />
-        </div>
-      </div>
+          <div className="overflow-x-hidden py-5">
+            <div className="flex gap-4">
+              <GenreCard />
+              <GenreCard />
+            </div>
+          </div>
 
-      <Pagination className="mx-auto" currentPage={1} totalPages={3} />
+          <Pagination
+            theme={customTheme.pagination}
+            className="mx-auto"
+            currentPage={1}
+            totalPages={3}
+          />
+        </>
+      )}
+
+      {!isMobile && (
+        <>
+          <div className="flex justify-between items-center">
+            <h1 className="font-serif font-bold text-2xl text-white">
+              Our Genres
+            </h1>
+            <Pagination
+              theme={customTheme.pagination}
+              className="mx-auto"
+              currentPage={1}
+              totalPages={3}
+            />
+          </div>
+        </>
+      )}
     </div>
   );
 }

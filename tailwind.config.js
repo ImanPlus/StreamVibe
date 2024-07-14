@@ -13,6 +13,7 @@ export default {
         black_08: "#141414",
         black_10: "#1A1A1A",
         black_15: "#262626",
+        black_20: "#333333",
         gray_60: "#999999",
         red_45: "#E50000",
         red_50: "#FF0000",
@@ -23,6 +24,9 @@ export default {
       },
       height: {
         114: "458px",
+      },
+      fontSize: {
+        invisible: "0",
       },
     },
   },

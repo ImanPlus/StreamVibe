@@ -1,5 +1,6 @@
 import { Pagination } from "flowbite-react";
 import MovieCard from "./MovieCard";
+import customTheme from "../theme/paginationMobile";
 
 export default function MovieList() {
   return (
@@ -13,7 +14,12 @@ export default function MovieList() {
         </div>
       </div>
 
-      <Pagination className="mx-auto" currentPage={1} totalPages={3} />
+      <Pagination
+        theme={customTheme.pagination}
+        className="mx-auto"
+        currentPage={1}
+        totalPages={3}
+      />
     </div>
   );
 }
