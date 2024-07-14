@@ -37,11 +37,20 @@ export default function GenreList() {
             </h1>
             <Pagination
               theme={customTheme.pagination}
-              className="mx-auto"
               currentPage={1}
               totalPages={3}
             />
           </div>
+
+          {/* <div className="overflow-x-hidden py-5"> */}
+          <div className="grid grid-cols-5 gap-4 md:pt-9 lg:pt-11">
+            <GenreCard />
+            <GenreCard />
+            <GenreCard />
+            <GenreCard />
+            <GenreCard />
+          </div>
+          {/* </div> */}
         </>
       )}
     </div>
