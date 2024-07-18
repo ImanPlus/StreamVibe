@@ -25,6 +25,7 @@ export default function Movies() {
             </button>
             <div className="p-10 md:pt-5 md:px-6 lg:px-10 ">
               <GenreList />
+              <MovieList />
             </div>
           </div>
         </>

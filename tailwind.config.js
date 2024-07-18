@@ -12,6 +12,7 @@ export default {
         black_06: "#0F0F0F",
         black_08: "#141414",
         black_10: "#1A1A1A",
+        black_12: "#1F1F1F",
         black_15: "#262626",
         black_20: "#333333",
         gray_60: "#999999",

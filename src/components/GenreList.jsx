@@ -1,6 +1,7 @@
 import { Pagination } from "flowbite-react";
 import GenreCard from "./GenreCard";
-import customTheme from "../theme/paginationMobile";
+import customThemeMobile from "../theme/paginationMobile";
+import customThemeDesktop from "../theme/paginationDesktop";
 import useBreakpoints from "../constants/breakpoints";
 
 export default function GenreList() {
@@ -21,7 +22,7 @@ export default function GenreList() {
           </div>
 
           <Pagination
-            theme={customTheme.pagination}
+            theme={customThemeMobile.pagination}
             className="mx-auto"
             currentPage={1}
             totalPages={3}
@@ -36,13 +37,15 @@ export default function GenreList() {
               Our Genres
             </h1>
             <Pagination
-              theme={customTheme.pagination}
+              theme={customThemeDesktop.pagination}
               currentPage={1}
               totalPages={3}
+              showIcons
+              previousLabel=""
+              nextLabel=""
             />
           </div>
 
-          {/* <div className="overflow-x-hidden py-5"> */}
           <div className="grid grid-cols-5 gap-4 md:pt-9 lg:pt-11">
             <GenreCard />
             <GenreCard />
@@ -50,7 +53,6 @@ export default function GenreList() {
             <GenreCard />
             <GenreCard />
           </div>
-          {/* </div> */}
         </>
       )}
     </div>
