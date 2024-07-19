@@ -28,6 +28,10 @@ export default {
       },
       fontSize: {
         invisible: "0",
+        x: "10px",
+      },
+      flexGrow: {
+        2: "2",
       },
     },
   },
