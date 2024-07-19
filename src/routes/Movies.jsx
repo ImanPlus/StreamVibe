@@ -1,6 +1,7 @@
 import Banner from "../components/Banner";
 import GenreList from "../components/GenreList";
 import MovieList from "../components/MovieList";
+import PromoSection from "../components/PromoSection";
 import useBreakpoints from "../constants/breakpoints";
 
 export default function Movies() {
@@ -14,6 +15,7 @@ export default function Movies() {
         <>
           <GenreList />
           <MovieList />
+          <PromoSection />
         </>
       )}
 
