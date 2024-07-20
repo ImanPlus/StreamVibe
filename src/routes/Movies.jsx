@@ -30,6 +30,7 @@ export default function Movies() {
               <MovieList />
             </div>
           </div>
+          <PromoSection />
         </>
       )}
     </div>
