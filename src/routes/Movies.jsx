@@ -21,7 +21,7 @@ export default function Movies() {
 
       {!isMobile && (
         <>
-          <div className="container border border-black_15 my-28 rounded-xl relative min-h-80">
+          <div className="container border border-black_15 mt-28 mb-8 rounded-xl relative min-h-80">
             <button className="absolute translate-x-[50%] translate-y-[-50%] md:translate-x-[27%] lg:translate-x-[37%] bg-red_45 rounded-md p-2 font-serif font-semibold text-base lg:text-xl text-white w-24 h-10 lg:w-28 lg:h-12">
               Movies
             </button>
