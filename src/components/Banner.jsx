@@ -1,7 +1,9 @@
 import MyIcon from "../components/MyIcon";
 import useBreakpoints from "../constants/breakpoints";
+import defaultBanner from "../assets/avengersEndGame.png";
+import PropTypes from "prop-types";
 
-export default function Banner() {
+export default function Banner({ poster = defaultBanner }) {
   const { isDesktop } = useBreakpoints();
   const iconSize = isDesktop ? "56" : "44";
   const playIcon = isDesktop ? "28" : "24";
@@ -9,7 +11,7 @@ export default function Banner() {
   return (
     <div className="relative rounded-xl flex flex-col">
       <img
-        src="src/assets/avengersEndGame.png"
+        src={poster}
         alt="avengersEndGame"
         className="rounded-xl object-cover w-full h-114 lg:h-auto"
       />
@@ -55,3 +57,7 @@ export default function Banner() {
     </div>
   );
 }
+
+Banner.propTypes = {
+  poster: PropTypes.string,
+};
