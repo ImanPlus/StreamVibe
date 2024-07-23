@@ -9,7 +9,7 @@ const Rating = ({ rating }) => {
   for (let i = 0; i < fullStars; i++) {
     start.push(
       <span key={i}>
-        <MyIcon iconName="star" />
+        <MyIcon iconName="star" size="15" />
       </span>
     );
   }
@@ -17,13 +17,13 @@ const Rating = ({ rating }) => {
   if (halfStar) {
     start.push(
       <span key="half">
-        <MyIcon iconName="star-half" />
+        <MyIcon iconName="star-half" size="15" />
       </span>
     );
   }
 
   return (
-    <div>
+    <div className="flex gap-1 mt-1">
       {start}
       <span>{rating}</span>
     </div>

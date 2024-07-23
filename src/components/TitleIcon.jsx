@@ -13,6 +13,6 @@ const TitleIcon = ({ iconName, title }) => {
 export default TitleIcon;
 
 TitleIcon.propTypes = {
-  iconName: PropTypes.string.isRequired,
-  title: PropTypes.string,
+  iconName: PropTypes.string,
+  title: PropTypes.string.isRequired,
 };
