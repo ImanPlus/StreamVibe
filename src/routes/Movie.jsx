@@ -1,4 +1,5 @@
 import Banner from "../components/Banner";
+import CastSlider from "../components/CastSlider";
 import DescriptionMovie from "../components/DescriptionMovie";
 import MovieDetails from "../components/MovieDetails";
 
@@ -14,6 +15,7 @@ export default function Movie() {
         <div className="flex flex-col py-14 gap-5">
           <DescriptionMovie />
           <MovieDetails />
+          <CastSlider actors="Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler, Jack Sparrow, Alain Delon" />
         </div>
       )}
     </div>

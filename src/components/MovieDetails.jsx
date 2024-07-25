@@ -4,7 +4,7 @@ import Badge from "../components/Badge";
 
 export default function MovieDetails() {
   return (
-    <div className="font-serif text-sm font-medium text-gray_60 rounded-xl border border-black_15 p-6 flex flex-col gap-5">
+    <div className="font-serif text-sm font-medium text-gray_60 rounded-xl border border-black_15 p-6 flex flex-col gap-5 bg-black_10">
       <div>
         <TitleIcon iconName="date" title="Released Year" />
         <p className="font-semibold text-base text-white">2022</p>
