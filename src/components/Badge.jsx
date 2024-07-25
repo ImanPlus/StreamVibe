@@ -3,7 +3,6 @@ import Rating from "./Rating";
 import classNames from "classnames";
 
 const Badge = ({ label, className, rate }) => {
-  console.log("rate", rate);
   const badgeClasses = classNames(
     "rounded-xl border border-black_15 bg-black_08 py-2 px-3 text-white",
     className,

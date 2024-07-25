@@ -1,7 +1,7 @@
 import MyIcon from "./MyIcon";
 import PropTypes from "prop-types";
 
-const Rating = ({ rating }) => {
+const Rating = ({ rating, className }) => {
   const fullStars = Math.floor(rating);
   const halfStar = rating % 1 !== 0;
 
@@ -25,7 +25,7 @@ const Rating = ({ rating }) => {
   return (
     <div className="flex gap-1 mt-1">
       {start}
-      <span>{rating}</span>
+      <span className={className}>{rating}</span>
     </div>
   );
 };
@@ -34,4 +34,5 @@ export default Rating;
 
 Rating.propTypes = {
   rating: PropTypes.number.isRequired,
+  className: PropTypes.string,
 };
