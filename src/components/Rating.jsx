@@ -23,7 +23,7 @@ const Rating = ({ rating, className }) => {
   }
 
   return (
-    <div className="flex gap-1 mt-1">
+    <div className="flex items-center gap-1 mt-1">
       {start}
       <span className={className}>{rating}</span>
     </div>
