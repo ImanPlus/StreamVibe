@@ -1,6 +1,8 @@
 import { Button } from "flowbite-react";
 import useBreakpoints from "../constants/breakpoints";
 import classNames from "classnames";
+import defaultPictureMobile from "../assets/PromoSection-mobile.png";
+import defaultPictureLaptop from "../assets/PromoSection-laptop.png";
 
 export default function PromoSection() {
   const { isMobile, isTablet } = useBreakpoints();
@@ -14,13 +16,13 @@ export default function PromoSection() {
       <div className="relative border border-black_15 rounded-xl">
         {isMobile ? (
           <img
-            src="src/assets/PromoSection-mobile.png"
+            src={defaultPictureMobile}
             alt="PromoSection-mobile"
             className="rounded-xl object-cover h-full w-full"
           />
         ) : (
           <img
-            src="src/assets/PromoSection-laptop.png"
+            src={defaultPictureLaptop}
             alt="PromoSection-mobile"
             className="rounded-xl object-cover h-full w-full"
           />
