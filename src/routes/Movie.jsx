@@ -2,6 +2,7 @@ import Banner from "../components/Banner";
 import CastSlider from "../components/CastSlider";
 import DescriptionMovie from "../components/DescriptionMovie";
 import MovieDetails from "../components/MovieDetails";
+import PromoSection from "../components/PromoSection";
 import Reviews from "../components/Reviews";
 
 import useBreakpoints from "../constants/breakpoints";
@@ -18,6 +19,7 @@ export default function Movie() {
           <MovieDetails />
           <CastSlider actors="Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler, Jack Sparrow, Alain Delon" />
           <Reviews />
+          <PromoSection />
         </div>
       )}
     </div>
