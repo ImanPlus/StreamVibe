@@ -41,7 +41,7 @@ export default function CastSlider({ actors }) {
     <div className="font-serif text-sm font-medium rounded-xl border border-black_15 p-6 md:p-10 xl:p-12 bg-black_10">
       <div className="w-full flex flex-col gap-4">
         <div className="flex justify-between items-center">
-          <h2 className="text-gray_60">Cast</h2>
+          <h2 className="text-gray_60 md:text-base xl:text-lg">Cast</h2>
           <div className="flex justify-end gap-2">
             <button
               onClick={handlePrevClick}
