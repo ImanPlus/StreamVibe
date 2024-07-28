@@ -31,6 +31,7 @@ export default function Movie() {
               actors="Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler, Jack Sparrow, Alain Delon, Nicolas Cage, Jamie Foxx, Michael Keaton, x1,
 "
             />
+            <Reviews />
           </div>
           <div className="bg-red-500 col-span-4">columns - 2</div>
         </div>

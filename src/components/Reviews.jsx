@@ -3,16 +3,16 @@ import MyIcon from "./MyIcon";
 
 export default function Reviews() {
   return (
-    <div className="font-serif text-sm font-medium rounded-xl border border-black_15 p-6 bg-black_10 flex flex-col gap-6">
+    <div className="font-serif text-sm font-medium rounded-xl border border-black_15 p-6 md:p-10 xl:p-12 bg-black_10 flex flex-col gap-6">
       <div className="flex justify-between items-center">
-        <h2 className="text-gray_60">Reviews</h2>
+        <h2 className="text-gray_60 md:text-base xl:text-lg">Reviews</h2>
         <button className="flex items-center gap-1 rounded-md border border-black_15 bg-black_08 p-2 text-white">
           <MyIcon iconName="plus" size="24" />
-          Add Your Review
+          <p className="xl:text-lg">Add Your Review</p>
         </button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
         <div className="bg-black_06 flex flex-col flex-wrap gap-4 p-6 rounded-xl border border-black_15">
           <div className="flex justify-between items-center">
             <div className="flex flex-col">
