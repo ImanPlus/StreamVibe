@@ -1,5 +1,6 @@
 import useBreakpoints from "../constants/breakpoints";
 import MyIcon from "./MyIcon";
+import defaultPicture from "../assets/movie-poster.png";
 
 export default function MovieCard() {
   const { isMobile, isLaptop, isDesktop } = useBreakpoints();
@@ -31,7 +32,7 @@ export default function MovieCard() {
 
   return (
     <div className="p-3 rounded-xl bg-black_10 flex flex-col gap-2 min-w-60 md:min-w-0 border border-black_15">
-      <img src="src/assets/movie-poster.png" alt="movie-poster" />
+      <img src={defaultPicture} alt="movie-poster" />
       <div className="flex justify-between items-center w-full max-h-full gap-1">
         <div className="flex items-center justify-between rounded-full bg-black_08 p-2 md:p-0 lg:p-2 border border-black_15 h-full">
           <MyIcon
