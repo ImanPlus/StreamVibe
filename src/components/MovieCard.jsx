@@ -1,11 +1,12 @@
 import useBreakpoints from "../constants/breakpoints";
 import MyIcon from "./MyIcon";
 import defaultPicture from "../assets/movie-poster.png";
+import PropTypes from "prop-types";
+import Rating from "./Rating";
 
-export default function MovieCard() {
+export default function MovieCard({ image = { defaultPicture }, rating }) {
   const { isMobile, isLaptop, isDesktop } = useBreakpoints();
   let sizeClock = "1";
-  let sizeStar = "1";
 
   switch (true) {
     case isLaptop || isMobile:
@@ -18,22 +19,16 @@ export default function MovieCard() {
       sizeClock = "11";
   }
 
-  switch (true) {
-    case isMobile || isLaptop:
-      sizeStar = "14";
-      break;
-    case isDesktop:
-      sizeStar = "18";
-      break;
-    default:
-      sizeStar = "10";
-      break;
-  }
-
   return (
     <div className="p-3 rounded-xl bg-black_10 flex flex-col gap-2 min-w-60 md:min-w-0 border border-black_15">
-      <img src={defaultPicture} alt="movie-poster" />
-      <div className="flex justify-between items-center w-full max-h-full gap-1">
+      <div className="w-52 h-60">
+        <img
+          src={image}
+          alt="movie-poster"
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="flex justify-between items-center flex-wrap w-full max-h-full gap-1">
         <div className="flex items-center justify-between rounded-full bg-black_08 p-2 md:p-0 lg:p-2 border border-black_15 h-full">
           <MyIcon
             iconName="clock"
@@ -46,13 +41,7 @@ export default function MovieCard() {
         </div>
 
         <div className="flex justify-between items-center rounded-full bg-black_08 p-2 md:p-0 lg:p-2 border border-black_15 h-full">
-          <div className="flex text-red-500">
-            <MyIcon iconName="star" size={sizeStar} />
-            <MyIcon iconName="star" size={sizeStar} />
-            <MyIcon iconName="star" size={sizeStar} />
-            <MyIcon iconName="star" size={sizeStar} />
-            <MyIcon iconName="star-half" size={sizeStar} />
-          </div>
+          <Rating rating={rating} />
           <p className="font-serif font-medium text-xs md:text-x lg:text-xs xl:text-sm text-gray_60 ml-1">
             20K
           </p>
@@ -61,3 +50,8 @@ export default function MovieCard() {
     </div>
   );
 }
+
+MovieCard.propTypes = {
+  image: PropTypes.array,
+  rating: PropTypes.string,
+};

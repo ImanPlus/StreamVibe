@@ -1,11 +1,28 @@
+import { useLoaderData, useSearchParams } from "react-router-dom";
+import { getMovies } from "../api/movie";
 import Banner from "../components/Banner";
 import GenreList from "../components/GenreList";
 import MovieList from "../components/MovieList";
 import PromoSection from "../components/PromoSection";
 import useBreakpoints from "../constants/breakpoints";
 
+export async function loader({ request }) {
+  const url = new URL(request.url);
+  const page = parseInt(url.searchParams.get("page")) || 1;
+  const { data } = await getMovies(page);
+
+  return { movies: data.data, page, totalPages: data.metadata.total_count };
+}
+
 export default function Movies() {
   const { isMobile } = useBreakpoints();
+  const { movies, page, totalPages } = useLoaderData();
+  console.log("movies", movies, "page", page, "totalPages", totalPages);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const onPageChange = (page) => {
+    setSearchParams({ page });
+  };
 
   return (
     <div className="container mx-auto min-h-screen flex flex-col px-4 pt-10 bg-black_08">
@@ -14,7 +31,12 @@ export default function Movies() {
       {isMobile && (
         <>
           <GenreList />
-          <MovieList />
+          <MovieList
+            movies={movies}
+            page={page}
+            totalPages={totalPages}
+            onPageChange={onPageChange}
+          />
           <PromoSection />
         </>
       )}

@@ -4,8 +4,17 @@ import customThemeMobile from "../theme/paginationMobile";
 import customThemeDesktop from "../theme/paginationDesktop";
 import useBreakpoints from "../constants/breakpoints";
 
-export default function MovieList() {
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+
+export default function MovieList({
+  movies = [],
+  page = 1,
+  totalPages = 1,
+  onPageChange,
+}) {
   const { isMobile } = useBreakpoints();
+
   return (
     <div className="flex flex-col justify-between py-12">
       {isMobile && (
@@ -14,18 +23,27 @@ export default function MovieList() {
             Our Movies
           </h1>
 
-          <div className="overflow-x-hidden py-5">
+          <div className="py-5 overflow-auto">
             <div className="flex gap-4">
-              <MovieCard />
-              <MovieCard />
+              {movies.length !== 0 &&
+                movies.map((item) => (
+                  <Link to={`/movies/${item.id}`} key={item.id}>
+                    <MovieCard
+                      movies={movies}
+                      image={item.images}
+                      rating={item.imdb_rating}
+                    />
+                  </Link>
+                ))}
             </div>
           </div>
 
           <Pagination
             theme={customThemeMobile.pagination}
             className="mx-auto"
-            currentPage={1}
-            totalPages={3}
+            currentPage={page}
+            totalPages={totalPages}
+            onPageChange={onPageChange}
           />
         </>
       )}
@@ -57,3 +75,10 @@ export default function MovieList() {
     </div>
   );
 }
+
+MovieList.propTypes = {
+  movies: PropTypes.array,
+  page: PropTypes.number,
+  totalPages: PropTypes.number,
+  onPageChange: PropTypes.func,
+};
