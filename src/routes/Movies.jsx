@@ -23,7 +23,7 @@ export default function Movies() {
   const onPageChange = (page) => {
     setSearchParams({ page });
   };
-
+  console.log("Before enter to component:", movies);
   return (
     <div className="container mx-auto min-h-screen flex flex-col px-4 pt-10 bg-black_08">
       <Banner />
