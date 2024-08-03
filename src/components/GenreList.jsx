@@ -14,7 +14,7 @@ export default function GenreList() {
             Our Genres
           </h1>
 
-          <div className="overflow-x-hidden py-5">
+          <div className="overflow-auto py-5">
             <div className="flex gap-4">
               <GenreCard />
               <GenreCard />

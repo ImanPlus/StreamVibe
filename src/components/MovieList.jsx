@@ -6,19 +6,12 @@ import useBreakpoints from "../constants/breakpoints";
 
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
-
 export default function MovieList({
   movies = [],
   page = 1,
   totalPages = 1,
   onPageChange,
 }) {
-  useEffect(() => {
-    console.log("Movies updated:", movies);
-  }, [movies]);
-
-  console.log("After enter to component:", movies);
   const { isMobile } = useBreakpoints();
 
   return (
@@ -72,7 +65,6 @@ export default function MovieList({
           </div>
 
           <div className="grid grid-cols-4 gap-4 md:gap-2 lg:gap-4 md:pt-9 lg:pt-11">
-            {console.log("movies array desktop:", movies)}
             {movies.length !== 0 &&
               movies.map((item) => (
                 <Link to={`/movies/${item.id}`} key={item.id}>

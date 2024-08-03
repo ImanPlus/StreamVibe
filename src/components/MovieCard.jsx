@@ -4,7 +4,7 @@ import defaultPicture from "../assets/movie-poster.png";
 import PropTypes from "prop-types";
 import Rating from "./Rating";
 
-export default function MovieCard({ image = { defaultPicture }, rating }) {
+export default function MovieCard({ image = { defaultPicture } }) {
   const { isMobile, isLaptop, isDesktop } = useBreakpoints();
   let sizeClock = "1";
 
@@ -21,7 +21,7 @@ export default function MovieCard({ image = { defaultPicture }, rating }) {
 
   return (
     <div className="p-3 rounded-xl bg-black_10 flex flex-col gap-2 min-w-60 md:min-w-0 border border-black_15">
-      <div className="w-52 h-60">
+      <div className="h-60">
         <img
           src={image}
           alt="movie-poster"
@@ -29,7 +29,7 @@ export default function MovieCard({ image = { defaultPicture }, rating }) {
         />
       </div>
       <div className="flex justify-between items-center flex-wrap w-full max-h-full gap-1">
-        <div className="flex items-center justify-between rounded-full bg-black_08 p-2 md:p-0 lg:p-2 border border-black_15 h-full">
+        <div className="flex items-center justify-between rounded-full bg-black_08 p-2 md:p-0 lg:p-1 border border-black_15 h-full">
           <MyIcon
             iconName="clock"
             size={sizeClock}
@@ -40,8 +40,8 @@ export default function MovieCard({ image = { defaultPicture }, rating }) {
           </p>
         </div>
 
-        <div className="flex justify-between items-center rounded-full bg-black_08 p-2 md:p-0 lg:p-2 border border-black_15 h-full">
-          <Rating rating={rating} />
+        <div className="flex justify-between items-end md:items-start lg:items-end flex-nowrap rounded-full bg-black_08 p-2 md:p-0 lg:p-1 border border-black_15 h-full">
+          <Rating rating={4.5} />
           <p className="font-serif font-medium text-xs md:text-x lg:text-xs xl:text-sm text-gray_60 ml-1">
             20K
           </p>
@@ -53,5 +53,4 @@ export default function MovieCard({ image = { defaultPicture }, rating }) {
 
 MovieCard.propTypes = {
   image: PropTypes.array,
-  rating: PropTypes.string,
 };

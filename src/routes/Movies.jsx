@@ -17,13 +17,12 @@ export async function loader({ request }) {
 export default function Movies() {
   const { isMobile } = useBreakpoints();
   const { movies, page, totalPages } = useLoaderData();
-  console.log("movies", movies, "page", page, "totalPages", totalPages);
   const [searchParams, setSearchParams] = useSearchParams();
 
   const onPageChange = (page) => {
     setSearchParams({ page });
   };
-  console.log("Before enter to component:", movies);
+
   return (
     <div className="container mx-auto min-h-screen flex flex-col px-4 pt-10 bg-black_08">
       <Banner />
@@ -49,7 +48,12 @@ export default function Movies() {
             </button>
             <div className="p-10 pb-4 md:pt-5 md:px-6 lg:px-10 ">
               <GenreList />
-              <MovieList />
+              <MovieList
+                movies={movies}
+                page={page}
+                totalPages={totalPages}
+                onPageChange={onPageChange}
+              />
             </div>
           </div>
           <PromoSection />
