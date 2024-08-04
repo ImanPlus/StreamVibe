@@ -1,5 +1,4 @@
 import { useState } from "react";
-import MyIcon from "./MyIcon";
 import { useNavigate } from "react-router-dom";
 
 export default function SearchBar() {
@@ -22,9 +21,6 @@ export default function SearchBar() {
         value={searchParams.q}
         onChange={handleSearch}
       />
-      {/* <button className="text-white border border-gray-500 bg-red_45 hover:bg-red-400 p-3 rounded-2xl ml-2">
-        <MyIcon iconName="search" size="20" />
-      </button> */}
     </div>
   );
 }
