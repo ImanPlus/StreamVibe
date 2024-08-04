@@ -20,7 +20,7 @@ export default function Reviews() {
               <p className="text-gray_60">From India</p>
             </div>
             <div className="border border-black_15 rounded-3xl flex items-center h-fit p-1">
-              <Rating rating={4.5} className="text-gray_60" />
+              <Rating rating="4.5" className="text-gray_60" />
             </div>
           </div>
           <p className="text-gray_60 font-normal">
@@ -36,7 +36,7 @@ export default function Reviews() {
               <p className="text-gray_60">From India</p>
             </div>
             <div className="border border-black_15 rounded-3xl flex items-center h-fit p-1">
-              <Rating rating={5} className="text-gray_60" />
+              <Rating rating="5" className="text-gray_60" />
             </div>
           </div>
           <p className="text-gray_60 font-normal">

@@ -22,7 +22,7 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full bg-black_08">
+    <header className="w-full bg-black_08 fixed top-0 left-0 right-0 z-10 shadow">
       <div className="container flex justify-between px-4 pt-10 pb-4 mx-auto">
         <Link to="/">
           <div className="flex items-center">

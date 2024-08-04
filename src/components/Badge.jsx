@@ -21,7 +21,7 @@ export default Badge;
 Badge.propTypes = {
   label: PropTypes.string.isRequired,
   className: PropTypes.string,
-  rate: PropTypes.number,
+  rate: PropTypes.string,
 };
 
 // How to use

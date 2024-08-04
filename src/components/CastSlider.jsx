@@ -10,6 +10,7 @@ export default function CastSlider({ actors }) {
   const actorList = actors.split(", ");
   const [activeIndex, setActiveIndex] = useState(0);
   const itemsPerPage = isMobile ? 4 : 8;
+  const sizeIcon = isTablet ? "15" : "30";
 
   const currentPageItems = actorList.slice(
     activeIndex,
@@ -47,13 +48,13 @@ export default function CastSlider({ actors }) {
               onClick={handlePrevClick}
               className="border border-black_15 bg-black_08 rounded-full p-2"
             >
-              <MyIcon iconName="arrow-left" size={isTablet ? 15 : 30} />
+              <MyIcon iconName="arrow-left" size={sizeIcon} />
             </button>
             <button
               onClick={handleNextClick}
               className="border border-black_15 bg-black_08 rounded-full p-2"
             >
-              <MyIcon iconName="arrow-right" size={isTablet ? 15 : 30} />
+              <MyIcon iconName="arrow-right" size={sizeIcon} />
             </button>
           </div>
         </div>

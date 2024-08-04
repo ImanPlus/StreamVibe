@@ -41,7 +41,7 @@ export default function MovieCard({ image = { defaultPicture } }) {
         </div>
 
         <div className="flex justify-between items-end md:items-start lg:items-end flex-nowrap rounded-full bg-black_08 p-2 md:p-0 lg:p-1 border border-black_15 h-full">
-          <Rating rating={4.5} />
+          <Rating rating="4.5" />
           <p className="font-serif font-medium text-xs md:text-x lg:text-xs xl:text-sm text-gray_60 ml-1">
             20K
           </p>
