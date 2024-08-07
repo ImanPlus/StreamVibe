@@ -3,8 +3,10 @@ import GenreCard from "./GenreCard";
 import customThemeMobile from "../theme/paginationMobile";
 import customThemeDesktop from "../theme/paginationDesktop";
 import useBreakpoints from "../constants/breakpoints";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-export default function GenreList() {
+export default function GenreList({ genres = [] }) {
   const { isMobile } = useBreakpoints();
   return (
     <div className="flex flex-col justify-between py-12">
@@ -16,8 +18,12 @@ export default function GenreList() {
 
           <div className="overflow-auto py-5">
             <div className="flex gap-4">
-              <GenreCard />
-              <GenreCard />
+              {genres.length !== 0 &&
+                genres.map((genre) => (
+                  <Link to={`/movies/genres/${genre.id}`} key={genre.id}>
+                    <GenreCard name={genre.name} />
+                  </Link>
+                ))}
             </div>
           </div>
 
@@ -46,15 +52,20 @@ export default function GenreList() {
             />
           </div>
 
-          <div className="grid grid-cols-5 gap-4 md:pt-9 lg:pt-11">
-            <GenreCard />
-            <GenreCard />
-            <GenreCard />
-            <GenreCard />
-            <GenreCard />
+          <div className="flex flex-nowrap md:pt-9 lg:pt-11 gap-4 overflow-x-auto touch-action-pan-x scrollbar-none">
+            {genres.length !== 0 &&
+              genres.map((genre) => (
+                <Link to={`/movies/genres/${genre.id}`} key={genre.id}>
+                  <GenreCard name={genre.name} />
+                </Link>
+              ))}
           </div>
         </>
       )}
     </div>
   );
 }
+
+GenreList.propTypes = {
+  genres: PropTypes.array,
+};

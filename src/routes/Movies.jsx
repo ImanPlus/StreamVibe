@@ -1,24 +1,16 @@
 import { useLoaderData, useSearchParams } from "react-router-dom";
-import { getMovies } from "../api/movie";
 import Banner from "../components/Banner";
 import GenreList from "../components/GenreList";
 import MovieList from "../components/MovieList";
 import PromoSection from "../components/PromoSection";
 import useBreakpoints from "../constants/breakpoints";
 
-export async function loader({ request }) {
-  const url = new URL(request.url);
-  const page = parseInt(url.searchParams.get("page")) || 1;
-  const query = url.searchParams.get("q");
-  const { data } = await getMovies(page, query);
-
-  return { movies: data.data, page, totalPages: data.metadata.total_count };
-}
-
 export default function Movies() {
   const { isMobile } = useBreakpoints();
-  const { movies, page, totalPages } = useLoaderData();
+  const { movies, page, totalPages, genres, selectedGenre } = useLoaderData();
   const [searchParams, setSearchParams] = useSearchParams();
+
+  const moviesToDisplay = selectedGenre ? selectedGenre : movies;
 
   const onPageChange = (page) => {
     setSearchParams({ page });
@@ -30,9 +22,9 @@ export default function Movies() {
 
       {isMobile && (
         <>
-          <GenreList />
+          <GenreList genres={genres} />
           <MovieList
-            movies={movies}
+            movies={moviesToDisplay}
             page={page}
             totalPages={totalPages}
             onPageChange={onPageChange}
@@ -48,9 +40,9 @@ export default function Movies() {
               Movies
             </button>
             <div className="p-10 pb-4 md:pt-5 md:px-6 lg:px-10 ">
-              <GenreList />
+              <GenreList genres={genres} />
               <MovieList
-                movies={movies}
+                movies={moviesToDisplay}
                 page={page}
                 totalPages={totalPages}
                 onPageChange={onPageChange}
