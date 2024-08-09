@@ -13,7 +13,7 @@ export default function ErrorPage() {
       <h2 className="text-blue-700 font-bold text-4xl">
         {status ? `${status} ${statusText}` : message}
       </h2>
-      <h1 className="text-5xl text-red-500">{data}</h1>
+      <h1 className="text-2xl md:text-5xl text-red-500 text-center ">{data}</h1>
     </div>
   );
 }
