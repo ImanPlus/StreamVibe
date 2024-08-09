@@ -3,7 +3,11 @@ import useBreakpoints from "../constants/breakpoints";
 import defaultBanner from "../assets/avengersEndGame.png";
 import PropTypes from "prop-types";
 
-export default function Banner({ poster = defaultBanner }) {
+export default function Banner({
+  poster = defaultBanner,
+  title = "Avengers : Endgame",
+  description = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id, deserunt!",
+}) {
   const { isDesktop } = useBreakpoints();
   const iconSize = isDesktop ? "56" : "44";
   const playIcon = isDesktop ? "28" : "24";
@@ -12,18 +16,15 @@ export default function Banner({ poster = defaultBanner }) {
     <div className="relative rounded-xl flex flex-col">
       <img
         src={poster}
-        alt="avengersEndGame"
+        alt={title}
         className="rounded-xl object-cover w-full h-114 lg:h-auto"
       />
       <div className="absolute inset-0 font-serif flex flex-col justify-end items-center gap-5 p-6 bg-gradient-to-t from-gray-950 to-transparent rounded-xl">
         <h1 className=" text-2xl lg:text-3xl md:text-3xl xl:text-4xl font-bold text-white">
-          Avengers: Endgame
+          {title}
         </h1>
         <p className="font-medium hidden md:block text-gray_60 text-center text-base xl:text-lg">
-          With the help of remaining allies, the Avengers must assemble once
-          more in order to undo Thanos's actions and undo the chaos to the
-          universe, no matter what consequences may be in store, and no matter
-          who they face... Avenge the fallen.
+          {description}
         </p>
         <div className="flex flex-col md:flex-row justify-center items-center gap-5 w-full">
           <button
@@ -59,5 +60,7 @@ export default function Banner({ poster = defaultBanner }) {
 }
 
 Banner.propTypes = {
-  poster: PropTypes.string,
+  poster: PropTypes.array,
+  title: PropTypes.string,
+  description: PropTypes.string,
 };

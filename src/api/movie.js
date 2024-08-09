@@ -17,3 +17,12 @@ export const getMovies = (page = "", query = "") => {
 
   return axiosInstance.get(url);
 };
+
+export const getSingleMovie = (movieId) => {
+  const axiosInstance = createAxiosInstance();
+  if (!movieId) {
+    return;
+  }
+
+  return axiosInstance.get(`/movies/${movieId}`);
+};

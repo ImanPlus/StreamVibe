@@ -27,11 +27,7 @@ export default function MovieList({
               {movies.length !== 0 &&
                 movies.map((item) => (
                   <Link to={`/movies/${item.id}`} key={item.id}>
-                    <MovieCard
-                      movies={movies}
-                      image={item.images}
-                      rating={item.imdb_rating}
-                    />
+                    <MovieCard movies={movies} image={item.poster} />
                   </Link>
                 ))}
             </div>
@@ -68,11 +64,7 @@ export default function MovieList({
             {movies.length !== 0 &&
               movies.map((item) => (
                 <Link to={`/movies/${item.id}`} key={item.id}>
-                  <MovieCard
-                    movies={movies}
-                    image={item.images}
-                    rating={item.imdb_rating}
-                  />
+                  <MovieCard movies={movies} image={item.poster} />
                 </Link>
               ))}
           </div>

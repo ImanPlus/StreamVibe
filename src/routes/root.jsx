@@ -3,6 +3,7 @@ import App from "../App";
 import Movies from "./Movies";
 import Movie from "./Movie";
 import { moviesLoader } from "../loader/moviesLoader";
+import { movieLoader } from "../loader/movieLoader";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
       {
         path: "/movies/:movieId",
         element: <Movie />,
+        loader: movieLoader,
       },
       {
         path: "/movies/genres/:genreId",

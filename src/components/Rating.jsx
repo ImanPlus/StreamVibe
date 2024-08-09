@@ -22,9 +22,9 @@ const Rating = ({ rating }) => {
       break;
   }
 
-  const start = [];
+  const star = [];
   for (let i = 0; i < fullStars; i++) {
-    start.push(
+    star.push(
       <span key={i}>
         <MyIcon iconName="star" size={sizeStar} />
       </span>
@@ -32,14 +32,14 @@ const Rating = ({ rating }) => {
   }
 
   if (halfStar) {
-    start.push(
+    star.push(
       <span key="half">
         <MyIcon iconName="star-half" size={sizeStar} />
       </span>
     );
   }
 
-  return <div className="flex items-center md:gap-1 mt-1">{start}</div>;
+  return <div className="flex items-center md:gap-1 mt-1">{star}</div>;
 };
 
 export default Rating;

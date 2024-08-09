@@ -20,14 +20,13 @@ export default function MovieCard({ image = { defaultPicture } }) {
   }
 
   return (
-    <div className="p-3 rounded-xl bg-black_10 flex flex-col gap-2 min-w-60 md:min-w-0 border border-black_15">
-      <div className="h-60">
-        <img
-          src={image}
-          alt="movie-poster"
-          className="w-full h-full object-cover"
-        />
-      </div>
+    <div className="p-3 rounded-xl bg-black_10 flex flex-col gap-2 min-w-60 md:min-w-0 border border-black_15 h-full">
+      <img
+        src={image}
+        alt="movie-poster"
+        className="w-full h-full object-cover"
+      />
+
       <div className="flex justify-between items-center flex-wrap w-full max-h-full gap-1">
         <div className="flex items-center justify-between rounded-full bg-black_08 p-2 md:p-0 lg:p-1 border border-black_15 h-full">
           <MyIcon
@@ -52,5 +51,5 @@ export default function MovieCard({ image = { defaultPicture } }) {
 }
 
 MovieCard.propTypes = {
-  image: PropTypes.array,
+  image: PropTypes.string,
 };
