@@ -14,6 +14,7 @@ export default function MovieDetails({
   writer = "",
 }) {
   const languageList = language.split(",");
+  const streamVibeRate = (parseInt(metaScore) / 10).toString();
 
   return (
     <div className="font-serif text-sm font-medium text-gray_60 rounded-xl border border-black_15 p-6 md:p-7 xl:p-12 flex flex-col gap-5 md:gap-6 xl:gap-8 bg-black_10">
@@ -34,7 +35,7 @@ export default function MovieDetails({
         <TitleIcon iconName="empty-star" title="Ratings" />
         <div className="flex mt-1 justify-between flex-wrap gap-4">
           <Badge label="IMDb" rate={imdbRating} />
-          <Badge label="Streamvibe" rate={parseInt(metaScore) / 10} />
+          <Badge label="Streamvibe" rate={streamVibeRate} />
         </div>
       </div>
 
