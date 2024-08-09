@@ -4,11 +4,13 @@ import Movies from "./Movies";
 import Movie from "./Movie";
 import { moviesLoader } from "../loader/moviesLoader";
 import { movieLoader } from "../loader/movieLoader";
+import ErrorPage from "../layout/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
