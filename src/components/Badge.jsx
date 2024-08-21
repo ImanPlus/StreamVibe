@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import Rating from "./Rating";
 import classNames from "classnames";
 
-const Badge = ({ label, className, rate }) => {
+const Badge = ({ label, className, rate, showRate = false }) => {
   const badgeClasses = classNames(
     "rounded-xl border border-black_15 bg-black_08 py-2 px-3 text-white",
     className,
@@ -11,7 +11,7 @@ const Badge = ({ label, className, rate }) => {
   return (
     <div className={badgeClasses}>
       {label}
-      {rate && <Rating rating={rate} />}
+      {rate && <Rating rating={rate} showRate={showRate} />}
     </div>
   );
 };
@@ -22,6 +22,7 @@ Badge.propTypes = {
   label: PropTypes.string.isRequired,
   className: PropTypes.string,
   rate: PropTypes.string,
+  showRate: PropTypes.bool,
 };
 
 // How to use

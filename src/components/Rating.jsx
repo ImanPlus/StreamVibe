@@ -2,7 +2,7 @@ import useBreakpoints from "../constants/breakpoints";
 import MyIcon from "./MyIcon";
 import PropTypes from "prop-types";
 
-const Rating = ({ rating }) => {
+const Rating = ({ rating, showRate }) => {
   const { isMobile, isLaptop, isDesktop } = useBreakpoints();
 
   const ratingNumber = parseFloat(rating);
@@ -39,11 +39,17 @@ const Rating = ({ rating }) => {
     );
   }
 
-  return <div className="flex items-center md:gap-1 mt-1">{star}</div>;
+  return (
+    <div className="flex items-center md:gap-1 mt-1">
+      {star}
+      <span className="pl-1">{showRate && rating}</span>
+    </div>
+  );
 };
 
 export default Rating;
 
 Rating.propTypes = {
   rating: PropTypes.string,
+  showRate: PropTypes.bool,
 };

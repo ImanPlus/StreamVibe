@@ -34,8 +34,8 @@ export default function MovieDetails({
       <div>
         <TitleIcon iconName="empty-star" title="Ratings" />
         <div className="flex mt-1 justify-between flex-wrap gap-4">
-          <Badge label="IMDb" rate={imdbRating} />
-          <Badge label="Streamvibe" rate={streamVibeRate} />
+          <Badge label="IMDB" rate={imdbRating} showRate={true} />
+          <Badge label="Streamvibe" rate={streamVibeRate} showRate={true} />
         </div>
       </div>
 
