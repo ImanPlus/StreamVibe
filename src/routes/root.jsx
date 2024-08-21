@@ -5,6 +5,7 @@ import Movie from "./Movie";
 import { moviesLoader } from "../loader/moviesLoader";
 import { movieLoader } from "../loader/movieLoader";
 import ErrorPage from "../layout/ErrorPage";
+import HomePage from "./HomePage";
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <h1>Home Page</h1>,
+        element: <HomePage />,
       },
       {
         path: "/movies",
