@@ -9,8 +9,11 @@ export default function MovieCard({ image = { defaultPicture } }) {
   let sizeClock = "1";
 
   switch (true) {
-    case isLaptop || isMobile:
+    case isMobile:
       sizeClock = "20";
+      break;
+    case isLaptop:
+      sizeClock = "15";
       break;
     case isDesktop:
       sizeClock = "24";
@@ -20,7 +23,7 @@ export default function MovieCard({ image = { defaultPicture } }) {
   }
 
   return (
-    <div className="p-3 rounded-xl bg-black_10 flex flex-col gap-2 min-w-60 md:min-w-0 border border-black_15 h-full">
+    <div className="p-3 md:p-2 lg:p-3 rounded-xl bg-black_10 flex flex-col gap-2 min-w-60 md:min-w-0 border border-black_15 h-full">
       <img
         src={image}
         alt="movie-poster"
@@ -34,7 +37,7 @@ export default function MovieCard({ image = { defaultPicture } }) {
             size={sizeClock}
             className="mr-1 md:mr-0 lg:mr-1"
           />
-          <p className="font-serif font-medium text-xs lg:text-base md:text-[8px] text-gray_60">
+          <p className="font-serif font-medium text-xs lg:text-xs md:text-[8px] text-gray_60">
             1h 57min
           </p>
         </div>

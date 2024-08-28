@@ -8,7 +8,7 @@ const Rating = ({ rating, showRate }) => {
   const ratingNumber = parseFloat(rating);
   const fullStars = Math.floor(ratingNumber);
   const halfStar = ratingNumber % 1 !== 0;
-
+  console.log(isMobile, isLaptop, isDesktop);
   let sizeStar = "1";
   switch (true) {
     case isMobile || isLaptop:
@@ -40,9 +40,9 @@ const Rating = ({ rating, showRate }) => {
   }
 
   return (
-    <div className="flex items-center md:gap-1 mt-1">
+    <div className="flex items-center md:mt-1 lg:mt-0">
       {star}
-      <span className="pl-1">{showRate && rating}</span>
+      <span>{showRate && rating}</span>
     </div>
   );
 };
