@@ -8,7 +8,7 @@ const Rating = ({ rating, showRate }) => {
   const ratingNumber = parseFloat(rating);
   const fullStars = Math.floor(ratingNumber);
   const halfStar = ratingNumber % 1 !== 0;
-  console.log(isMobile, isLaptop, isDesktop);
+
   let sizeStar = "1";
   switch (true) {
     case isMobile || isLaptop:
