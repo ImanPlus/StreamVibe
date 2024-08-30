@@ -4,6 +4,9 @@ import "./index.css";
 import { RouterProvider } from "react-router-dom";
 import router from "./routes/root.jsx";
 
+import dotenv from "react-dotenv";
+dotenv.config();
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
