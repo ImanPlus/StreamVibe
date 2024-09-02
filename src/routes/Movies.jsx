@@ -10,7 +10,7 @@ export default function Movies() {
   const { movies, page, totalPages, genres, selectedGenre } = useLoaderData();
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const moviesToDisplay = selectedGenre ? selectedGenre : movies;
+  // const moviesToDisplay = selectedGenre ? selectedGenre : movies;
 
   const onPageChange = (page) => {
     setSearchParams({ page });
@@ -24,7 +24,7 @@ export default function Movies() {
         <>
           <GenreList genres={genres} />
           <MovieList
-            movies={moviesToDisplay}
+            movies={movies}
             page={page}
             totalPages={totalPages}
             onPageChange={onPageChange}
@@ -42,7 +42,7 @@ export default function Movies() {
             <div className="p-10 pb-4 md:pt-5 md:px-6 lg:px-10 ">
               <GenreList genres={genres} />
               <MovieList
-                movies={moviesToDisplay}
+                movies={movies}
                 page={page}
                 totalPages={totalPages}
                 onPageChange={onPageChange}

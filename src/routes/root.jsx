@@ -4,6 +4,7 @@ import Movies from "./Movies";
 import Movie from "./Movie";
 import { moviesLoader } from "../loader/moviesLoader";
 import { movieLoader } from "../loader/movieLoader";
+import { genreLoader } from "../loader/genreLoader";
 import ErrorPage from "../layout/ErrorPage";
 import HomePage from "./HomePage";
 
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
       {
         path: "/movies/genres/:genreId",
         element: <Movies />,
-        loader: moviesLoader,
+        loader: genreLoader,
       },
     ],
   },
