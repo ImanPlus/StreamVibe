@@ -7,10 +7,8 @@ import useBreakpoints from "../constants/breakpoints";
 
 export default function Movies() {
   const { isMobile } = useBreakpoints();
-  const { movies, page, totalPages, genres, selectedGenre } = useLoaderData();
+  const { movies, page, totalPages, genres } = useLoaderData();
   const [searchParams, setSearchParams] = useSearchParams();
-
-  // const moviesToDisplay = selectedGenre ? selectedGenre : movies;
 
   const onPageChange = (page) => {
     setSearchParams({ page });
