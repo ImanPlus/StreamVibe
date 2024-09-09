@@ -4,6 +4,7 @@ import useBreakpoints from "../constants/breakpoints";
 import { Link } from "react-router-dom";
 import HamburgerMenu from "../assets/icons/hamburgerMenu.svg?react";
 import SearchBar from "../components/SearchBar";
+import { useTranslation } from "react-i18next";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,9 +22,15 @@ export default function Header() {
     setIsSearchVisible(!isSearchVisible);
   };
 
+  //Change language
+  const { i18n } = useTranslation("en");
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
     <header className="w-full bg-black_08 fixed top-0 left-0 right-0 z-10 shadow">
-      <div className="container flex justify-between px-4 pt-10 pb-4 mx-auto">
+      <div className="container flex justify-between items-center px-4 pt-10 pb-4 mx-auto">
         <Link to="/">
           <div className="flex items-center">
             <MyIcon iconName="logo" size={logoSize} />
@@ -32,6 +39,22 @@ export default function Header() {
             </h1>
           </div>
         </Link>
+
+        <div className="flex justify-start flex-1 flex-nowrap items-center gap-2 ml-4">
+          <button onClick={() => changeLanguage("en")}>
+            <MyIcon
+              iconName="flag-us"
+              className="w-4 md:w-5 xl:w-6 hover:scale-150"
+            />
+          </button>
+          <button onClick={() => changeLanguage("fa")}>
+            <MyIcon
+              iconName="flag-ir"
+              className="w-4 md:w-5 xl:w-6 hover:scale-150"
+            />
+          </button>
+        </div>
+
         {isMobile && (
           <div className="flex flex-col items-end gap-3">
             <div

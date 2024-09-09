@@ -1,60 +1,76 @@
 import MyIcon from "../components/MyIcon";
 import useBreakpoints from "../constants/breakpoints";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
   const { isDesktop } = useBreakpoints();
   let socialSize = isDesktop ? "56" : "44";
 
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+  const rtlClasses = currentLanguage === "fa" ? "rtl" : "ltr";
+
   return (
     <footer className="bg-black_06 w-full">
       <div className="container mx-auto flex flex-col px-4 pt-12 pb-5 font-serif gap-12">
         <div>
-          <div className="grid grid-cols-2 gap-7 md:grid-cols-6 sm:grid-cols-5">
+          <div
+            className="grid grid-cols-2 gap-7 md:grid-cols-6 sm:grid-cols-5"
+            dir={rtlClasses}
+          >
             <div className="flex flex-col gap-4">
-              <h2 className="text-white  text-base font-semibold">Home</h2>
-              <div className="font-semibold text-gray_60 text-sm flex flex-col gap-2 cursor-pointer">
-                <p>Categories</p>
-                <p>Devices</p>
-                <p>Pricing</p>
-                <p>FAQ</p>
-              </div>
-            </div>
-            <div className="flex flex-col gap-4">
-              <h2 className="text-white text-base font-semibold">Movies</h2>
-              <div className="font-semibold text-gray_60 text-sm flex flex-col gap-2 cursor-pointer">
-                <p>Gernes</p>
-                <p>Trending</p>
-                <p>New Release</p>
-                <p>Popular</p>
-              </div>
-            </div>
-            <div className="flex flex-col gap-4">
-              <h2 className="text-white text-base font-semibold">Shows</h2>
-              <div className="font-semibold text-gray_60 text-sm flex flex-col gap-2 cursor-pointer">
-                <p>Gernes</p>
-                <p>Trending</p>
-                <p>New Release</p>
-                <p>Popular</p>
-              </div>
-            </div>
-            <div className="flex flex-col gap-4">
-              <h2 className="text-white text-base font-semibold">Support</h2>
-              <div className="font-semibold text-gray_60 text-sm flex flex-col gap-2 cursor-pointer">
-                <p>Contact Us</p>
-              </div>
-            </div>
-            <div className="flex flex-col gap-4">
-              <h2 className="text-white text-base font-semibold">
-                Subscription
+              <h2 className="text-white  text-base font-semibold">
+                {t("home")}
               </h2>
               <div className="font-semibold text-gray_60 text-sm flex flex-col gap-2 cursor-pointer">
-                <p>Plans</p>
-                <p>Features</p>
+                <p>{t("categories")}</p>
+                <p>{t("devices")}</p>
+                <p>{t("pricing")}</p>
+                <p>{t("faq")}</p>
               </div>
             </div>
             <div className="flex flex-col gap-4">
               <h2 className="text-white text-base font-semibold">
-                Connect With Us
+                {t("movies")}
+              </h2>
+              <div className="font-semibold text-gray_60 text-sm flex flex-col gap-2 cursor-pointer">
+                <p>{t("gernes")}</p>
+                <p>{t("trending")}</p>
+                <p>{t("newRelease")}</p>
+                <p>{t("popular")}</p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-4">
+              <h2 className="text-white text-base font-semibold">
+                {t("shows")}
+              </h2>
+              <div className="font-semibold text-gray_60 text-sm flex flex-col gap-2 cursor-pointer">
+                <p>{t("gernes")}</p>
+                <p>{t("trending")}</p>
+                <p>{t("newRelease")}</p>
+                <p>{t("popular")}</p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-4">
+              <h2 className="text-white text-base font-semibold">
+                {t("support")}
+              </h2>
+              <div className="font-semibold text-gray_60 text-sm flex flex-col gap-2 cursor-pointer">
+                <p>{t("contactUs")}</p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-4">
+              <h2 className="text-white text-base font-semibold">
+                {t("subscription")}
+              </h2>
+              <div className="font-semibold text-gray_60 text-sm flex flex-col gap-2 cursor-pointer">
+                <p>{t("plans")}</p>
+                <p>{t("features")}</p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-4">
+              <h2 className="text-white text-base font-semibold">
+                {t("connectWithUs")}
               </h2>
               <div className="flex items-center gap-2 cursor-pointer">
                 <MyIcon
@@ -76,12 +92,17 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="border-t border-t-black_10 text-sm text-gray_60 flex flex-col gap-5 pt-5">
-          <p>@2023 streamvib, All Rights Reserved</p>
+        <div
+          className="border-t border-t-black_10 text-sm text-gray_60 flex flex-col gap-5 pt-5"
+          dir={rtlClasses}
+        >
+          <p>
+            <bdi>@2023</bdi> <bdi>streamvib</bdi> , {t("allRightsReserved")}
+          </p>
           <div className="flex items-center gap-4 cursor-pointer">
-            <p>Terms of Use</p>
-            <p>Privacy Policy</p>
-            <p>Cookie Policy</p>
+            <p>{t("termsOfUse")}</p>
+            <p>{t("privacyPolicy")}</p>
+            <p>{t("cookiePolicy")}</p>
           </div>
         </div>
       </div>
