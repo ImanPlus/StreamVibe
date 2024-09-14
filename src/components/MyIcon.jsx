@@ -1,10 +1,12 @@
 import PropTypes from "prop-types";
 import React from "react";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
-const MyIcon = ({ iconName, size, ...props }) => {
+const MyIcon = ({ iconName, size = "24px", ...props }) => {
   if (!iconName) {
-    console.log("Error loading icon, iconName is empty...");
-    return;
+    console.error("Error: iconName is required.");
+    return null;
   }
 
   const IconComponent = React.lazy(() =>
@@ -12,7 +14,18 @@ const MyIcon = ({ iconName, size, ...props }) => {
   );
 
   return (
-    <React.Suspense fallback={<div className="text-red-500">Loading...</div>}>
+    <React.Suspense
+      fallback={
+        <div>
+          <Skeleton
+            circle={true}
+            width={`${size}px`}
+            height={`${size}px`}
+            className="bg-gray-800 animate-bounce"
+          />
+        </div>
+      }
+    >
       <IconComponent width={size} height={size} {...props} />
     </React.Suspense>
   );

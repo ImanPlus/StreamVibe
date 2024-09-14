@@ -45,12 +45,14 @@ export default function Header() {
             <MyIcon
               iconName="flag-us"
               className="w-4 md:w-5 xl:w-6 hover:scale-150"
+              size={logoSize}
             />
           </button>
           <button onClick={() => changeLanguage("fa")}>
             <MyIcon
               iconName="flag-ir"
               className="w-4 md:w-5 xl:w-6 hover:scale-150"
+              size={logoSize}
             />
           </button>
         </div>
