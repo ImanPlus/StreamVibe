@@ -1,0 +1,28 @@
+name: Generate README
+
+on:
+  push:
+    branches:
+      # - master
+      # - dev
+      - feature/generate-readme
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Generate README
+        run: npx readme-md-generator
+      # - name: Build project
+      #   run: npm run build
+      - name: Commit README
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add README.md
+          git commit -m "Auto-update README"
+          git push
