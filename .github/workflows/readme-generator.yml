@@ -16,7 +16,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Generate README
-        run: npx readme-md-generator
+        run: npx readme-md-generator --yes
       # - name: Build project
       #   run: npm run build
       - name: Commit README
