@@ -11,17 +11,18 @@
 npm install
 ```
 
+## Technologies Used
+
+- **Frontend:** React, JavaScript, CSS, Tailwind, HTML
+
 ## Author
 
 👤 **Iman Jalali**
 
-* Website: Iman Jalali
-* Github: [@imanPlus](https://github.com/imanPlus)
-* LinkedIn: [@iman-jalali](https://linkedin.com/in/iman-jalali)
+- Website: Iman Jalali
+- Github: [@imanPlus](https://github.com/imanPlus)
+- LinkedIn: [@iman-jalali](https://linkedin.com/in/iman-jalali)
 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
