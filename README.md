@@ -7,7 +7,7 @@
 
 ## Prerequisites
 
-- Node.js (version 14 or later)
+- Node.js (version 18 or later)
 - npm or yarn
 
 ## Explanation of Terms
