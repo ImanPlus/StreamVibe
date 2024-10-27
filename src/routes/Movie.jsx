@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useLocation } from "react-router-dom";
 import Banner from "../components/Banner";
 import CastSlider from "../components/CastSlider";
 import DescriptionMovie from "../components/DescriptionMovie";
@@ -7,10 +7,17 @@ import PromoSection from "../components/PromoSection";
 import Reviews from "../components/Reviews";
 
 import useBreakpoints from "../constants/breakpoints";
+import { useEffect } from "react";
 
 export default function Movie() {
   const { isMobile } = useBreakpoints();
   const { movie } = useLoaderData();
+  const location = useLocation();
+
+  // Scrolls to the top of the page when the route changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   return (
     <div className="container mx-auto min-h-screen flex flex-col px-4 pt-10 bg-black_08">
